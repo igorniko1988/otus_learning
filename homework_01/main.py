@@ -6,7 +6,7 @@ from typing import List
 import sympy
 
 
-def power_numbers(numbers) -> List:
+def power_numbers(*numbers) -> List:
     """
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
@@ -16,7 +16,7 @@ def power_numbers(numbers) -> List:
     try:
         result = [x**2 for x in numbers]
         return result
-    except TypeError:
+    except Exception:
         print('Only lists or tuples are available')
 
 # filter types
