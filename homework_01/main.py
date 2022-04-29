@@ -37,14 +37,12 @@ def filter_numbers(numbers,how_to_filter: str) -> List:
     <<< [2, 4]
     """
     try:
-        if how_to_filter == "odd":
+        if how_to_filter == ODD:
             return [x for x in numbers if x % 2 != 0]
-        if how_to_filter == "even":
+        if how_to_filter == EVEN:
             return [x for x in numbers if x % 2 == 0]
-        if how_to_filter == "prime":
-            return  [x for x in numbers if sympy.isprime(x)]
+        if how_to_filter == PRIME:
+            return list(filter(sympy.isprime,numbers))
     except Exception:
         print('Only lists or tuples are available')
 
-
-print(filter_numbers([1, 2, 3], how_to_filter=ODD))
